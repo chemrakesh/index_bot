@@ -21,4 +21,12 @@ app = ApplicationBuilder().token("7983460811:AAH5hrJYXUgeOiv8zY9mkQYlKKUuXmO_NC4
 app.add_handler(CommandHandler("index", fear_greed))
 
 # ▶️ Start the bot and keep it running
-app.run_polling()
+#app.run_polling()
+
+# Use webhook instead of polling
+PORT = int(os.environ.get("PORT", 8080))
+app.run_webhook(
+    listen="0.0.0.0",
+    port=PORT,
+    webhook_url="https://indexbot-chemrakesh9505-k31o2427.leapcell.dev/"
+)
