@@ -2,6 +2,7 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 import time
+import os
 
 # 🧠 This function runs when someone types "/index"
 async def fear_greed(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -19,9 +20,6 @@ app = ApplicationBuilder().token("7983460811:AAH5hrJYXUgeOiv8zY9mkQYlKKUuXmO_NC4
 
 # 🔗 Link the "/index" command to our image sending function
 app.add_handler(CommandHandler("index", fear_greed))
-
-# ▶️ Start the bot and keep it running
-#app.run_polling()
 
 # Use webhook instead of polling
 PORT = int(os.environ.get("PORT", 8080))
