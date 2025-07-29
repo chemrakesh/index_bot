@@ -6,7 +6,7 @@ async def fear_greed(update, context: ContextTypes.DEFAULT_TYPE):
     image_url = f"https://alternative.me/crypto/fear-and-greed-index.png?nocache={int(time.time())}"
     await update.message.reply_photo(photo=image_url)
 
-app = ApplicationBuilder().token("7983460811:AAH5hrJYXUgeOiv8zY9mkQYlKKUuXmO_NC4").build()
+app = ApplicationBuilder().token("BOT_TOKEN").build()
 app.add_handler(CommandHandler("index", fear_greed))
 
 PORT = int(os.environ.get("PORT", 8080))
